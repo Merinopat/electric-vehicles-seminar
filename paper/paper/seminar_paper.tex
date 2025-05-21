@@ -1,0 +1,110 @@
+\documentclass[10pt]{article}
+
+\usepackage{anysize} % Package to change margin size
+	\marginsize{2cm}{2cm}{1cm}{2cm}
+
+\usepackage{fancyhdr} % Package to make headers
+	\renewcommand{\headrulewidth}{0pt}
+
+\usepackage[dvipsnames]{xcolor} % Colors for the references links
+
+\usepackage{hyperref} % Package to link references
+	\hypersetup{colorlinks=true, linkcolor=black, citecolor=CadetBlue, filecolor=CadetBlue, urlcolor=CadetBlue,
+}
+
+\usepackage{multicol} % Package for multicolumn
+
+\usepackage{float} % Figures in multicolumn
+
+\usepackage[justification=centering]{caption} % Caption package
+
+\usepackage{parskip} % Package for removing paragraph indentations
+	\setlength\columnsep{18pt}
+
+\usepackage{amsmath, amssymb, amsfonts, mathtools, gensymb} % Package for maths
+
+\usepackage{enumerate} % Package for numeration list
+
+\usepackage{textcomp} % Euro sign
+
+\usepackage[style=numeric,
+			backend=bibtex]{biblatex} % Package for references
+\addbibresource{references.bib}
+	
+\usepackage{graphicx} \graphicspath{ {./images/} }
+
+\usepackage{multirow} % Package for multiple rows
+
+%\newcommand{\squeezeup}{\vspace{-2.5mm}}
+
+\usepackage{etoolbox}
+
+\BeforeBeginEnvironment{figure}{\vskip-1ex}
+\AfterEndEnvironment{figure}{\vskip-1ex}
+
+\usepackage{titlesec} % Adjust section spacing
+\titlespacing\section{0pt}{0pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 2.0pt}
+
+\begin{document}
+
+% Makes header	
+\pagestyle{fancy}
+\fancyhead[R]{\textit{EE4513}}% - Paper}}
+\fancyhead[L]{\textit{Seminar Paper}}
+
+% Makes footnotes with an asterisk NOT NECESSARY
+
+% Title
+\begin{center}
+	\Large{\textbf{Why is Germany experiencing an EV boom despite economic challenges?}}
+	\normalsize
+
+	% Author
+	\textit{Patryk Eryk Merino-Wi{\'s}niewski}\\
+	\vspace{0.1cm}
+	%Additional information
+	\textit{A0293826R}
+	\medskip
+	\normalsize
+\end{center}
+
+\begin{multicols}{2}
+	\small\textit{This paper was supported in part by the use of ChatGPT, an AI language model developed by OpenAI. The tool was used to enhance phrasing, check grammar, and assist in providing vehicle-related data.
+	}\normalsize 
+	\section{Introduction} \label{sec: intro}
+		\input{./sections/intro.tex}
+
+	\section{EV Market}\label{sec: mark}
+		\input{sections/market.tex}
+
+	\section{Charging Infrastructure}\label{sec: charg}
+		\input{./sections/infrastructure.tex}
+
+	\section{Energy Price Comparison}\label{sec: ener}
+		\input{./sections/energy.tex}
+
+	\section{The Economics of EV Ownership}\label{sec: owner}
+		\input{sections/ownership.tex}
+		
+	\section{Government Policies and Incentives}\label{sec: gover}
+		\input{./sections/government.tex}
+
+	\section{Conclusion}\label{sec: conc}
+		\input{./sections/conclusion.tex}
+		
+	\section*{References}
+
+
+\printbibliography[type=article, title={Articles}]
+
+\printbibliography[type=online, title={Online Resources}]
+
+\clearpage
+\end{multicols}
+
+\end{document}
+	
+\end{document}
